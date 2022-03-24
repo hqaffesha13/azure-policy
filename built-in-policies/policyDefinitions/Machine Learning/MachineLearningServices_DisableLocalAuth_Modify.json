@@ -32,6 +32,18 @@
           {
             "field": "Microsoft.MachineLearningServices/workspaces/computes/disableLocalAuth",
             "notEquals": true
+          },
+          {
+            "anyOf":[
+              {
+                "field": "Microsoft.MachineLearningServices/workspaces/computes/userAccountCredentials",
+                "exists": true
+              },
+              {
+                "field": "Microsoft.MachineLearningServices/workspaces/computes/sshSettings",
+                "exists": true
+              }
+            ]
           }
         ]
       },
